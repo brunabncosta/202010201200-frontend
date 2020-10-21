@@ -9,17 +9,13 @@ import { map } from 'rxjs/operators';
 })
 export class VeiculoService {
 
-  private baseUrl='http://localhost:8080/sin/systst-analise-risco/rest/veiculo/findAll'
+  private baseUrl: string ;
 
-  constructor(private httpClient: HttpClient) {}
-
-  getAllVeiculosList(): Observable<Veiculo[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
-      map(response => response.veiculo)
-    );
+  constructor(private httpClient: HttpClient) {
+    this.baseUrl = 'http://localhost:8080/sin/systst-analise-risco/rest/veiculo/findAll';
   }
-}
 
-interface GetResponse {
-    veiculo: Veiculo[];
+  findAll(): Observable<Veiculo[]> {
+    return this.httpClient.get<Veiculo[]>(this.baseUrl);
+  }
 }
