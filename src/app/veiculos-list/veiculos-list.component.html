@@ -1,0 +1,24 @@
+<table border = "1">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Valor</th>
+            <th>Risco</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tempVeiculos of veiculosList">
+            <td>{{ tempVeiculos.id }}</td>
+            <td>{{ tempVeiculos.marca }}</td>
+            <td>{{ tempVeiculos.modelo }}</td>
+            <td>{{ tempVeiculos.ano }}</td>
+            <td>{{ tempVeiculos.valor }}</td>
+            <td>{{ tempVeiculos.risco }}</td>
+        </tr>
+    </tbody>
+</table>
